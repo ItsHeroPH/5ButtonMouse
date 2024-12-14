@@ -1,5 +1,9 @@
 package core.util;
 
+import core.listeners.KeyboardListener;
+import core.listeners.MouseListener;
+import core.listeners.WindowListener;
+
 import javax.swing.*;
 
 public class Window {
@@ -12,6 +16,11 @@ public class Window {
     private int height;
     private boolean resizable;
 
+    // Window's event listeners
+    private final KeyboardListener keyboardListener = new KeyboardListener();
+    private final MouseListener mouseListener = new MouseListener();
+    private final WindowListener windowListener = new WindowListener();
+
     /**
      * Create a window
      * @return The window that you created
@@ -21,6 +30,26 @@ public class Window {
         window = new Window();
 
         return window;
+
+    }
+
+    /**
+     * Allows you to get access to the keyboard
+     * @return the keyboard
+     */
+    public static KeyboardListener getKeyboard() {
+
+        return window.keyboardListener;
+
+    }
+
+    /**
+     * Allows you to get access to the mouse
+     * @return the mouse
+     */
+    public static MouseListener getMouse() {
+
+        return window.mouseListener;
 
     }
 
@@ -79,6 +108,13 @@ public class Window {
         frame.setResizable(resizable);
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
+
+        // Register all the event listeners
+        frame.addKeyListener(keyboardListener);
+        frame.addMouseListener(mouseListener);
+        frame.addMouseMotionListener(mouseListener);
+        frame.addMouseWheelListener(mouseListener);
+        frame.addWindowListener(windowListener);
 
         frame.setVisible(true);
 
