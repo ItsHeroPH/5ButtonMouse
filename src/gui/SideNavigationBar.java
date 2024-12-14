@@ -14,7 +14,7 @@ public class SideNavigationBar extends Rectangle {
     public SideNavigationBar() {
 
 
-        super.setSize(250, 480)
+        super.setSize(200, 480)
                 .setPosition(0, 0)
                 .setColor("#dddddd")
                 .add(

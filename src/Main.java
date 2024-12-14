@@ -1,4 +1,6 @@
+import core.page.PageManager;
 import core.util.Window;
+import gui.HomePage;
 import gui.SideNavigationBar;
 
 import java.awt.*;
@@ -14,6 +16,8 @@ public class Main {
                 .run();
 
         Window.getPanel().add(new SideNavigationBar());
+        PageManager.setCurrentPage(new HomePage());
+
     }
 
 }

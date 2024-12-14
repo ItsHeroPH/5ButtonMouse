@@ -5,6 +5,7 @@ import core.listeners.MouseListener;
 import core.listeners.WindowListener;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Window {
 
@@ -123,6 +124,7 @@ public class Window {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setFocusable(true);
+        frame.setBackground(Color.BLACK);
 
         // Register all the event listeners
         frame.addKeyListener(keyboardListener);

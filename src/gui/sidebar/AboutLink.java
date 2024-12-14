@@ -1,6 +1,8 @@
 package gui.sidebar;
 
 import core.gui.text.ClickableText;
+import core.page.PageManager;
+import gui.AboutPage;
 
 import java.awt.*;
 
@@ -19,6 +21,12 @@ public class AboutLink extends ClickableText {
 
     @Override
     public void onClick() {
+
+        if(!(PageManager.getCurrentPage() instanceof AboutPage)) {
+
+            PageManager.setCurrentPage(new AboutPage());
+
+        }
 
     }
 }

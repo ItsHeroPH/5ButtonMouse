@@ -1,6 +1,8 @@
 package gui.sidebar;
 
 import core.gui.text.ClickableText;
+import core.page.PageManager;
+import gui.SupportPage;
 
 import java.awt.*;
 
@@ -18,6 +20,12 @@ public class SupportLink extends ClickableText {
     }
     @Override
     public void onClick() {
+
+        if(!(PageManager.getCurrentPage() instanceof SupportPage)) {
+
+            PageManager.setCurrentPage(new SupportPage());
+
+        }
 
     }
 }

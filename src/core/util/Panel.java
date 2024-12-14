@@ -26,6 +26,13 @@ public class Panel extends JPanel implements Runnable {
 
     }
 
+    public Panel remove(Component component) {
+
+        this.componentList.remove(component);
+        return this;
+
+    }
+
     @Override
     public void run() {
 
@@ -47,8 +54,12 @@ public class Panel extends JPanel implements Runnable {
 
             if(delta >= 1) {
 
-                this.update();
-                this.repaint();
+                try {
+
+                    this.update();
+                    this.repaint();
+
+                } catch (Exception ignored) {}
 
                 delta--;
                 drawCount++;

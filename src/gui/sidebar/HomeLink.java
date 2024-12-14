@@ -1,6 +1,8 @@
 package gui.sidebar;
 
 import core.gui.text.ClickableText;
+import core.page.PageManager;
+import gui.HomePage;
 
 import java.awt.*;
 
@@ -13,13 +15,17 @@ public class HomeLink extends ClickableText {
                 .setFontFamily("Arial")
                 .setFontSize(20)
                 .setFontStyle(Font.BOLD)
-                .setPosition(55, 30)
+                .setPosition(10, 30)
                 .setSize(200, 40);
     }
     @Override
     public void onClick() {
 
-        System.out.println("Home clicked");
+        if(!(PageManager.getCurrentPage() instanceof HomePage)) {
+
+            PageManager.setCurrentPage(new HomePage());
+
+        }
 
     }
 }

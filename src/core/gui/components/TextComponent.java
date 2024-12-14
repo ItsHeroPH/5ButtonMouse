@@ -2,7 +2,11 @@ package core.gui.components;
 
 import core.gui.Component;
 
+import javax.print.attribute.Attribute;
 import java.awt.*;
+import java.text.AttributedCharacterIterator;
+import java.text.AttributedString;
+import java.util.HashMap;
 
 public abstract class TextComponent extends Component {
 
@@ -78,8 +82,11 @@ public abstract class TextComponent extends Component {
     @Override
     public void onRepaint(Graphics2D graphics2D) {
 
+        graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+
         graphics2D.setColor(Color.decode(textColor));
         graphics2D.setFont(new Font(fontFamily, fontStyle, fontSize));
+
         graphics2D.drawString(text, getX(), getY());
 
     }
