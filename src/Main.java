@@ -1,4 +1,5 @@
 import core.util.Window;
+import gui.SideNavigationBar;
 
 public class Main {
 
@@ -9,6 +10,8 @@ public class Main {
                 .setSize(720, 480)
                 .setResizable(false)
                 .run();
+
+        Window.getPanel().add(new SideNavigationBar());
     }
 
 }

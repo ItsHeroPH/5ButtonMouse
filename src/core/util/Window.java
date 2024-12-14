@@ -15,6 +15,7 @@ public class Window {
     private int width;
     private int height;
     private boolean resizable;
+    private Panel panel;
 
     // Window's event listeners
     private final KeyboardListener keyboardListener = new KeyboardListener();
@@ -50,6 +51,12 @@ public class Window {
     public static MouseListener getMouse() {
 
         return window.mouseListener;
+
+    }
+
+    public static Panel getPanel() {
+
+        return window.panel;
 
     }
 
@@ -106,8 +113,9 @@ public class Window {
         frame.setSize(width, height);
         frame.setTitle(title);
         frame.setResizable(resizable);
-        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
+        frame.setFocusable(true);
 
         // Register all the event listeners
         frame.addKeyListener(keyboardListener);
@@ -115,6 +123,9 @@ public class Window {
         frame.addMouseMotionListener(mouseListener);
         frame.addMouseWheelListener(mouseListener);
         frame.addWindowListener(windowListener);
+
+        panel = new Panel();
+        frame.add(panel);
 
         frame.setVisible(true);
 
