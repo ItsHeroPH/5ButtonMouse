@@ -15,7 +15,7 @@ public class KeyboardListener extends KeyAdapter {
     public void keyPressed(KeyEvent e) {
 
         this.keyPressed[e.getKeyCode()] = true;
-        System.out.println("Key " + KeyEvent.getKeyText(e.getKeyCode()) + " pressed");
+//        System.out.println("Key " + KeyEvent.getKeyText(e.getKeyCode()) + " pressed");
 
     }
 
@@ -26,7 +26,7 @@ public class KeyboardListener extends KeyAdapter {
     public void keyReleased(KeyEvent e) {
 
         this.keyPressed[e.getKeyCode()] = false;
-        System.out.println("Key " + KeyEvent.getKeyText(e.getKeyCode()) + " released");
+//        System.out.println("Key " + KeyEvent.getKeyText(e.getKeyCode()) + " released");
 
     }
 

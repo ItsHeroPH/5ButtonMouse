@@ -15,6 +15,7 @@ public class Window {
     private int width;
     private int height;
     private boolean resizable;
+    private JFrame frame;
     private Panel panel;
 
     // Window's event listeners
@@ -57,6 +58,12 @@ public class Window {
     public static Panel getPanel() {
 
         return window.panel;
+
+    }
+
+    public static JFrame getFrame() {
+
+        return window.frame;
 
     }
 
@@ -109,7 +116,7 @@ public class Window {
      */
     public void run() {
 
-        JFrame frame = new JFrame();
+        frame = new JFrame();
         frame.setSize(width, height);
         frame.setTitle(title);
         frame.setResizable(resizable);

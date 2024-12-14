@@ -40,7 +40,7 @@ public class MouseListener extends MouseAdapter {
 
         this.xPos = e.getX();
         this.yPos = e.getY();
-        System.out.println("Mouse moved to [" + xPos + ", " + yPos + "]");
+//        System.out.println("Mouse moved to [" + xPos + ", " + yPos + "]");
 
     }
 
@@ -51,7 +51,7 @@ public class MouseListener extends MouseAdapter {
     public void mouseWheelMoved(MouseWheelEvent e) {
 
         this.scroll = e.getScrollType();
-        System.out.println("Mouse scroll to " + scroll);
+//        System.out.println("Mouse scroll to " + scroll);
 
     }
 
