@@ -40,6 +40,7 @@ public abstract class TextComponent extends Component {
     public TextComponent setFontSize(int fontSize) {
 
         this.fontSize = fontSize;
+        this.setPosition(this.getX(), this.getY() + fontSize);
         return this;
 
     }

@@ -14,7 +14,7 @@ public class AboutPage extends Rectangle {
                 .setSize(520, 480)
                 .add(
                         new Text()
-                                .setPosition(this.getX() + 20, 80)
+                                .setPosition(this.getX() + 20, 60)
                                 .setColor("#4b4949")
                                 .setText("About")
                                 .setFontFamily("Arial")

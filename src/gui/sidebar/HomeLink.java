@@ -11,11 +11,11 @@ public class HomeLink extends ClickableText {
     public HomeLink() {
 
         super.setColor("#4b4949")
+                .setPosition(10, 10)
                 .setText("5 BUTTON MOUSE")
                 .setFontFamily("Arial")
                 .setFontSize(20)
                 .setFontStyle(Font.BOLD)
-                .setPosition(10, 30)
                 .setSize(200, 40);
     }
     @Override

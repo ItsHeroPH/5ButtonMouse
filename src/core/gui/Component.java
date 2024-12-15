@@ -138,22 +138,27 @@ public abstract class Component {
      */
     public void update() {
 
-        if(Window.getMouse().getX() >= getX() && Window.getMouse().getX() <= getX() + width && Window.getMouse().getY() >= getY() && Window.getMouse().getY() <= getY() + height) {
+        if(
+                Window.getMouse().getX() >= getX() &&
+                Window.getMouse().getX() <= getX() + width &&
+                Window.getMouse().getY() >= getY() &&
+                Window.getMouse().getY() <= getY() + height
+        ) {
 
+            if(!isHovered()) this.onHoverEnter(); // fixed the multiple callback on the onHoverEnter method
             this.hovered = true;
-            this.onHoverEnter();
 
         } else {
 
+            if(isHovered()) this.onHoverLeave(); // fixed the multiple callback on the onHoverLeave method
             this.hovered = false;
-            this.onHoverLeave();
 
         }
 
         if(hovered && Window.getMouse().isKeyPressed(1)) {
 
+            if(!isClicked()) this.onClick(); // fixed the multiple callback on the onClick method
             this.clicked = true;
-            this.onClick();
 
         } else {
 

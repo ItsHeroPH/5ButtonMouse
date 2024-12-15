@@ -3,8 +3,6 @@ import core.util.Window;
 import gui.HomePage;
 import gui.SideNavigationBar;
 
-import java.awt.*;
-
 public class Main {
 
     public static void main(String[] args) {

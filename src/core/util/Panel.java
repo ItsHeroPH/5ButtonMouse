@@ -90,11 +90,13 @@ public class Panel extends JPanel implements Runnable {
     protected void paintComponent(Graphics g) {
 
         Graphics2D graphics2D = (Graphics2D) g;
-        for(Component component : componentList) {
+        try {
+            for(Component component : componentList) {
 
-            component.paint(graphics2D);
+                component.paint(graphics2D);
 
-        }
+            }
+        } catch (Exception ignored) {}
 
     }
 }

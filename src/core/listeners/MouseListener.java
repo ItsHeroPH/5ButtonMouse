@@ -17,7 +17,7 @@ public class MouseListener extends MouseAdapter {
     public void mousePressed(MouseEvent e) {
 
         this.keyPressed[e.getButton()] = true;
-        System.out.println("Mouse " + e.getButton() + " pressed");
+//        System.out.println("Mouse " + e.getButton() + " pressed");
 
     }
 
@@ -28,7 +28,7 @@ public class MouseListener extends MouseAdapter {
     public void mouseReleased(MouseEvent e) {
 
         this.keyPressed[e.getButton()] = false;
-        System.out.println("Mouse " + e.getButton() + " released");
+//        System.out.println("Mouse " + e.getButton() + " released");
 
     }
 
