@@ -15,15 +15,18 @@ public abstract class Component {
 
     // Child component list
     private final List<Component> componentList = new ArrayList<>();
+    private Component parent;
 
     /**
      * Add the child component
      * @param component the child component
      */
-    public Component add(Component component) {
+    public void add(Component component) {
 
+        this.parent = this;
+
+        component.setPosition(getX() + component.getX(), getY() + component.getY());
         this.componentList.add(component);
-        return this;
 
     }
 
@@ -31,14 +34,23 @@ public abstract class Component {
      * Add many child component
      * @param components the children components
      */
-    public Component add(Component... components) {
+    public void add(Component... components) {
 
         for(Component component : components) {
 
             this.add(component);
 
         }
-        return this;
+
+    }
+
+    /**
+     * Get the parent component of this component
+     * @return the parent component
+     */
+    public Component getParent() {
+
+        return parent;
 
     }
 
@@ -47,12 +59,10 @@ public abstract class Component {
      * @param xPos X position coordinate
      * @param yPos Y position coordinate
      */
-    public Component setPosition(int xPos, int yPos) {
+    public void setPosition(int xPos, int yPos) {
 
         this.xPos = xPos;
         this.yPos = yPos;
-
-        return this;
 
     }
 
@@ -61,12 +71,10 @@ public abstract class Component {
      * @param width the width of the component
      * @param height the height of the component
      */
-    public Component setSize(int width, int height) {
+    public void setSize(int width, int height) {
 
         this.width = width;
         this.height = height;
-
-        return this;
 
     }
 

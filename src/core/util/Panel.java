@@ -96,7 +96,7 @@ public class Panel extends JPanel implements Runnable {
                 component.paint(graphics2D);
 
             }
-        } catch (Exception ignored) {}
+        } catch(Exception ignored) {}
 
     }
 }

@@ -1,17 +1,11 @@
-package core.gui.components.button;
+package core.gui.components;
 
 import core.gui.shapes.Rectangle;
 import core.util.Window;
 
 import java.awt.*;
 
-public class Switch extends Rectangle {
-
-    @Override
-    public Rectangle setSize(int width, int height) {
-        super.setRound(height/2);
-        return super.setSize(width, height);
-    }
+public abstract class Button extends Rectangle {
 
     @Override
     public void onHoverEnter() {
@@ -26,4 +20,6 @@ public class Switch extends Rectangle {
         Window.getFrame().setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 
     }
+
+    public abstract void onClick();
 }
