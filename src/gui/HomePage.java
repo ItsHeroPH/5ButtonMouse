@@ -20,14 +20,14 @@ public class HomePage extends Rectangle {
         setColor(Color.decode("#cccccc"));
 
         Text autoStartHeader = new Text("Auto Start");
-        autoStartHeader.setPosition(100, 150);
+        autoStartHeader.setPosition(300, 180);
         autoStartHeader.setFontFamily("Arial");
         autoStartHeader.setFontSize(25);
         autoStartHeader.setFontStyle(Font.TRUETYPE_FONT);
         autoStartHeader.setColor(Color.decode("#000000"));
 
         Text autoStartParagraph = new Text("Automatically start the program when the device open");
-        autoStartParagraph.setPosition(100, 155);
+        autoStartParagraph.setPosition(300, 185);
         autoStartParagraph.setFontFamily("Arial");
         autoStartParagraph.setFontSize(15);
         autoStartParagraph.setFontStyle(Font.TRUETYPE_FONT);

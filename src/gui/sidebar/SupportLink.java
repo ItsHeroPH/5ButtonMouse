@@ -12,7 +12,7 @@ public class SupportLink extends ClickableText {
         setColor(Color.decode("#00000"));
         setFontSize(20);
         setFontStyle(Font.TRUETYPE_FONT);
-        setPosition(30, 110);
+        setPosition(30, 140);
 
     }
     @Override

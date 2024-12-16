@@ -12,7 +12,7 @@ public class HomeLink extends ClickableText {
 
         super("5 BUTTON MOUSE");
         setColor(Color.decode("#4b4949"));
-        setPosition(20, 15);
+        setPosition(20, 45);
         setFontFamily("Arial");
         setFontSize(20);
         setFontStyle(Font.BOLD);

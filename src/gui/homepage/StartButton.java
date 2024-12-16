@@ -11,13 +11,14 @@ public class StartButton extends Button {
 
     public StartButton() {
 
-        setPosition(30, 70);
+        setPosition(230, 100);
         setSize(170, 40);
         setRound(20);
         setColor(Color.decode("#dddddd"));
         setPadding(70, 7);
 
         Text text = new Text("Start");
+        text.setPosition(230, 100);
         text.setColor(Color.decode("#000000"));
         text.setFontSize(20);
         text.setFontFamily("Arial");

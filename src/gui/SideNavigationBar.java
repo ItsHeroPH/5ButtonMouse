@@ -19,7 +19,7 @@ public class SideNavigationBar extends Rectangle {
 
         Text version = new Text("version.1.0.0");
         version.setColor(Color.decode("#898989"));
-        version.setPosition(30, 400);
+        version.setPosition(30, 430);
         version.setFontSize(15);
         version.setFontFamily("Arial");
         version.setFontStyle(Font.BOLD);

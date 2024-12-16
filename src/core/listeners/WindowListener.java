@@ -8,35 +8,35 @@ public class WindowListener extends WindowAdapter {
     @Override
     public void windowOpened(WindowEvent e) {
 
-//        System.out.println("Window is now open!");
+        System.out.println("Window is now open!");
 
     }
 
     @Override
     public void windowActivated(WindowEvent e) {
 
-//        System.out.println("Window activated!");
+        System.out.println("Window activated!");
 
     }
 
     @Override
     public void windowClosing(WindowEvent e) {
 
-//        System.out.println("Closing the window");
+        System.out.println("Closing the window");
 
     }
 
     @Override
     public void windowClosed(WindowEvent e) {
 
-//        System.out.println("Window closed!");
+        System.out.println("Window closed!");
 
     }
 
     @Override
     public void windowDeactivated(WindowEvent e) {
 
-//        System.out.println("Window deactivated!");
+        System.out.println("Window deactivated!");
 
     }
 

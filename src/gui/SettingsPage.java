@@ -14,10 +14,7 @@ public class SettingsPage extends Rectangle {
         setSize(520, 450);
         setColor(Color.decode("#cccccc"));
 
-        add(
-                new SettingBorder(),
-                new Button1()
-        );
+        add(new SettingBorder());
 
     }
 

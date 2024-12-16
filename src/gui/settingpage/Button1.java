@@ -10,21 +10,21 @@ public class Button1 extends Rectangle {
     public Button1() {
 
         setColor(Color.decode("#848484"));
-        setPosition(30, 50);
+        setPosition(230, 80);
         setSize(450, 200);
 
         Rectangle rectangle = new Rectangle();
         rectangle.setColor(Color.decode("#cccccc"));
-        rectangle.setPosition(5, 5);
+        rectangle.setPosition(235, 85);
         rectangle.setSize(440, 190);
 
         Rectangle rectangle2 = new Rectangle();
         rectangle2.setColor(Color.decode("#cccccc"));
-        rectangle2.setPosition(15, -5);
+        rectangle2.setPosition(245, 75);
         rectangle2.setSize(88, 20);
 
         Text text = new Text("BUTTON 1");
-        text.setPosition(30, -8);
+        text.setPosition(260, 72);
         text.setColor(Color.decode("#848484"));
         text.setFontSize(15);
         text.setFontStyle(Font.BOLD);

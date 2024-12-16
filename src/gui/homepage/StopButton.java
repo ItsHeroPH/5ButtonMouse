@@ -11,13 +11,14 @@ public class StopButton extends Button {
 
     public StopButton() {
 
-        setPosition(230, 70);
+        setPosition(430, 100);
         setSize(170, 40);
         setRound(20);
         setColor(Color.decode("#848484"));
         setPadding(70, 7);
 
         Text text = new Text("Stop");
+        text.setPosition(430, 100);
         text.setColor(Color.decode("#4b4949"));
         text.setFontSize(20);
         text.setFontFamily("Arial");

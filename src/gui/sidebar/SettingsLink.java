@@ -14,7 +14,7 @@ public class SettingsLink extends ClickableText {
         setColor(Color.decode("#00000"));
         setFontSize(20);
         setFontStyle(Font.TRUETYPE_FONT);
-        setPosition(30, 70);
+        setPosition(30, 100);
 
     }
 

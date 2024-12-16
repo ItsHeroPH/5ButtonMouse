@@ -24,17 +24,6 @@ public abstract class Component {
     public void add(Component component) {
 
         component.setParent(this);
-        component.setPosition(getX() + component.getX(), getY() + component.getY());
-        if(!component.getChildren().isEmpty()) {
-
-            for(Component child : component.getChildren()) {
-
-                child.setPosition(child.getX() + getX(), child.getY() + getY());
-
-            }
-
-        }
-
         this.componentList.add(component);
 
     }

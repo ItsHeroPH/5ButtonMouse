@@ -17,7 +17,7 @@ public class MouseListener extends MouseAdapter {
     public void mousePressed(MouseEvent e) {
 
         this.keyPressed[e.getButton()] = true;
-//        System.out.println("Mouse " + e.getButton() + " pressed");
+        System.out.println("Mouse " + e.getButton() + " pressed");
 
     }
 
@@ -28,7 +28,7 @@ public class MouseListener extends MouseAdapter {
     public void mouseReleased(MouseEvent e) {
 
         this.keyPressed[e.getButton()] = false;
-//        System.out.println("Mouse " + e.getButton() + " released");
+        System.out.println("Mouse " + e.getButton() + " released");
 
     }
 
@@ -40,7 +40,7 @@ public class MouseListener extends MouseAdapter {
 
         this.xPos = e.getX();
         this.yPos = e.getY();
-//        System.out.println("Mouse moved to [" + xPos + ", " + yPos + "]");
+        System.out.println("Mouse moved to [" + xPos + ", " + yPos + "]");
 
     }
 
@@ -51,7 +51,7 @@ public class MouseListener extends MouseAdapter {
     public void mouseWheelMoved(MouseWheelEvent e) {
 
         this.scroll = e.getUnitsToScroll();
-//        System.out.println("Mouse scroll to " + scroll);
+        System.out.println("Mouse scroll to " + scroll);
 
     }
 
