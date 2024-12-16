@@ -29,13 +29,6 @@ public abstract class Switch extends Button {
 
     }
 
-    @Override
-    public void setPosition(int xPos, int yPos) {
-
-        super.setPosition(xPos, yPos);
-
-    }
-
     public void setSwitchHeadColor(Color color) {
 
         this.switchHead.setColor(color);
