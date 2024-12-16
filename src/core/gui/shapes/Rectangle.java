@@ -56,7 +56,7 @@ public class Rectangle extends Component {
         }
 
         graphics2D.setColor(color);
-        graphics2D.fillRoundRect(this.getX(), this.getY() - 30, this.getWidth(), this.getHeight(), round, round);
+        graphics2D.fillRoundRect(this.getX(), this.getY() - 30, this.getWidth(), this.getHeight(), round, round); // fixed the component hit box is being not in the position
 
     }
 

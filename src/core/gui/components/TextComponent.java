@@ -67,7 +67,7 @@ public abstract class TextComponent extends Component {
     public void setFontSize(int fontSize) {
 
         this.fontSize = fontSize;
-        super.setPosition(this.getX(), this.getY() - (fontSize/2));
+        super.setPosition(this.getX(), this.getY() - (fontSize/2)); // fixed the text hit box is being not in the position
 
     }
 
@@ -114,7 +114,7 @@ public abstract class TextComponent extends Component {
         graphics2D.setColor(getColor());
         graphics2D.setFont(font);
 
-        graphics2D.drawString(text, getX() - 10, getY() - (getFontSize()/2));
+        graphics2D.drawString(text, getX() - 10, getY() - (getFontSize()/2)); // fixed the text hit box is being not in the position
 
     }
 }
