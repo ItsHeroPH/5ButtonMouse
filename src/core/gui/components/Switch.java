@@ -33,7 +33,6 @@ public abstract class Switch extends Button {
     public void setPosition(int xPos, int yPos) {
 
         super.setPosition(xPos, yPos);
-        switchHead.setPosition(xPos - 5, yPos - 5);
 
     }
 

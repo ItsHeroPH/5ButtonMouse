@@ -8,7 +8,7 @@ public class AutoStartSwitch extends Switch {
 
     public AutoStartSwitch() {
 
-        setPosition(30, 140);
+        setPosition(30, 145);
         setSize(50, 20);
         setSwitchHeadColor(Color.decode("#848484"));
         setActive(false);

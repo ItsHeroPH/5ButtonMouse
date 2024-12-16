@@ -8,7 +8,7 @@ import java.util.List;
 
 public abstract class Component {
 
-    private int xPos, yPos, width, height;
+    private int xPos, yPos, width, height = 0;
 
     private boolean clicked = false;
     private boolean hovered = false;
@@ -23,9 +23,18 @@ public abstract class Component {
      */
     public void add(Component component) {
 
-        this.parent = this;
-
+        component.setParent(this);
         component.setPosition(getX() + component.getX(), getY() + component.getY());
+        if(!component.getChildren().isEmpty()) {
+
+            for(Component child : component.getChildren()) {
+
+                child.setPosition(child.getX() + getX(), child.getY() + getY());
+
+            }
+
+        }
+
         this.componentList.add(component);
 
     }
@@ -45,12 +54,32 @@ public abstract class Component {
     }
 
     /**
+     * Set the parent component of this component
+     * @param parent the parent component
+     */
+    public void setParent(Component parent) {
+
+        this.parent = parent;
+
+    }
+
+    /**
      * Get the parent component of this component
      * @return the parent component
      */
     public Component getParent() {
 
         return parent;
+
+    }
+
+    /**
+     * Get the children component of this component
+     * @return the children component
+     */
+    public List<Component> getChildren() {
+
+        return componentList;
 
     }
 
