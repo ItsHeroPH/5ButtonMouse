@@ -50,7 +50,7 @@ public class MouseListener extends MouseAdapter {
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
 
-        this.scroll = e.getScrollType();
+        this.scroll = e.getUnitsToScroll();
 //        System.out.println("Mouse scroll to " + scroll);
 
     }
@@ -86,4 +86,13 @@ public class MouseListener extends MouseAdapter {
 
     }
 
+    /**
+     * Get the amount of scrolling
+     * @return the amount of scrolling
+     */
+    public int getScroll() {
+
+        return this.scroll;
+
+    }
 }

@@ -19,17 +19,15 @@ public class Panel extends JPanel implements Runnable {
 
     }
 
-    public Panel add(Component component) {
+    public void add(Component component) {
 
         this.componentList.add(component);
-        return this;
 
     }
 
-    public Panel remove(Component component) {
+    public void remove(Component component) {
 
         this.componentList.remove(component);
-        return this;
 
     }
 
@@ -43,7 +41,7 @@ public class Panel extends JPanel implements Runnable {
         double timer = 0;
         double drawCount = 0;
 
-        while (true) {
+        while (thread != null) {
 
             currentTime = System.nanoTime();
 
