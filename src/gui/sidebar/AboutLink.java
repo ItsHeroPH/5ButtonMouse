@@ -1,31 +1,23 @@
 package gui.sidebar;
 
 import core.gui.components.ClickableText;
-import core.page.PageManager;
-import gui.SettingsPage;
 
 import java.awt.*;
 
-public class SettingsLink extends ClickableText {
+public class AboutLink extends ClickableText {
 
-    public SettingsLink() {
+    public AboutLink() {
 
-        super("SETTINGS");
+        super("ABOUT");
         setColor(Color.decode("#00000"));
         setFontSize(20);
         setFontStyle(Font.TRUETYPE_FONT);
-        setPosition(30, 70);
+        setPosition(30, 150);
 
     }
 
     @Override
     public void onClick() {
-
-        if(!(PageManager.getCurrentPage() instanceof SettingsPage)) {
-
-            PageManager.setCurrentPage(new SettingsPage());
-
-        }
 
     }
 

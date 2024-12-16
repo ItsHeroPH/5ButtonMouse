@@ -51,7 +51,7 @@ public class Rectangle extends Component {
         if(this.strokeColor != null) {
 
             graphics2D.setColor(strokeColor);
-            graphics2D.setStroke(new BasicStroke(stroke));
+            graphics2D.setStroke(new BasicStroke(stroke, BasicStroke.CAP_SQUARE, BasicStroke.JOIN_MITER));
 
         }
 

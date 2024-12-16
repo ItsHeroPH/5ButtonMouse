@@ -67,8 +67,6 @@ public abstract class TextComponent extends Component {
     public void setFontSize(int fontSize) {
 
         this.fontSize = fontSize;
-
-        super.setSize(text.length() * fontSize, fontSize);
         super.setPosition(this.getX(), this.getY() - (fontSize/2));
 
     }
@@ -106,12 +104,17 @@ public abstract class TextComponent extends Component {
     @Override
     public void onRepaint(Graphics2D graphics2D) {
 
+        Font font = new Font(getFontFamily(), getFontStyle(), getFontSize());
+        FontMetrics fm = graphics2D.getFontMetrics(font);
+
+        super.setSize(fm.stringWidth(text), fm.getHeight());
+
         graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
         graphics2D.setColor(getColor());
-        graphics2D.setFont(new Font(getFontFamily(), getFontStyle(), getFontSize()));
+        graphics2D.setFont(font);
 
-        graphics2D.drawString(text, getX(), getY() - (getFontSize()/2));
+        graphics2D.drawString(text, getX() - 10, getY() - (getFontSize()/2));
 
     }
 }

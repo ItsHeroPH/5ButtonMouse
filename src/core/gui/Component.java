@@ -8,7 +8,7 @@ import java.util.List;
 
 public abstract class Component {
 
-    private int xPos, yPos, width, height = 0;
+    private int xPos, yPos, width, height;
 
     private boolean clicked = false;
     private boolean hovered = false;
