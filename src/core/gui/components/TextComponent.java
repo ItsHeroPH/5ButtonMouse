@@ -7,12 +7,22 @@ import java.awt.*;
 public abstract class TextComponent extends Component {
 
     private Color textColor;
-    private final String text;
+    private String text;
     private String fontFamily = "Arial";
     private int fontSize = 10;
     private int fontStyle = 0;
 
     public TextComponent(String text) {
+
+        this.text = text;
+
+    }
+
+    /**
+     * Set the text in text component
+     * @param text the text you want to display
+     */
+    public void setText(String text) {
 
         this.text = text;
 

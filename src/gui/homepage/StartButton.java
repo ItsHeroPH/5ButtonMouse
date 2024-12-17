@@ -14,12 +14,12 @@ public class StartButton extends Button {
         setPosition(230, 100);
         setSize(170, 40);
         setRound(20);
-        setColor(Color.decode("#dddddd"));
+        setColor(!Mouse.isActive() ? Color.decode("#dddddd") : Color.decode("#848484"));
         setPadding(70, 7);
 
         Text text = new Text("Start");
         text.setPosition(230, 100);
-        text.setColor(Color.decode("#000000"));
+        text.setColor(!Mouse.isActive() ? Color.decode("#000000") : Color.decode("#4b4949"));
         text.setFontSize(20);
         text.setFontFamily("Arial");
         text.setFontStyle(Font.TRUETYPE_FONT);

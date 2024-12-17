@@ -40,5 +40,4 @@ public class KeyboardListener extends KeyAdapter {
         return this.keyPressed[keyCode];
 
     }
-
 }

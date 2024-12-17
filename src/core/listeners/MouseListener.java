@@ -14,7 +14,6 @@ public class MouseListener extends MouseAdapter {
     private final int scrollOffsetMin = 0;
     private int scrollOffsetMax = 0;
 
-
     /**
      * This is called when the button in the mouse is pressed
      */
@@ -140,4 +139,5 @@ public class MouseListener extends MouseAdapter {
         this.scrollOffsetMax = scrollOffsetMax;
 
     }
+
 }

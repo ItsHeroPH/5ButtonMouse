@@ -13,10 +13,7 @@ public class Button1Section extends Rectangle {
         setPosition(230, 80);
         setSize(450, 200);
 
-        Rectangle rectangleInner = new Rectangle();
-        rectangleInner.setColor(Color.decode("#cccccc"));
-        rectangleInner.setPosition(235, 85);
-        rectangleInner.setSize(440, 190);
+        FormSection rectangleInner = new FormSection(230, 80, 1);
 
         Rectangle rectangleText = new Rectangle();
         rectangleText.setColor(Color.decode("#cccccc"));
