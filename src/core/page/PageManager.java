@@ -15,6 +15,7 @@ public class PageManager {
 
         }
 
+        Window.getMouse().resetScrollOffset();
         Window.getPanel().add(page);
         currentPage = page;
 
