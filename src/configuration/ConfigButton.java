@@ -23,4 +23,10 @@ public class ConfigButton {
         return keys[click - 1];
 
     }
+
+    public int size() {
+
+        return keys.length;
+
+    }
 }

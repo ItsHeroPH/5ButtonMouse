@@ -9,6 +9,8 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Mouse implements NativeMouseListener {
 
@@ -17,6 +19,7 @@ public class Mouse implements NativeMouseListener {
     private int pressCount = 0;
     private Instant lastPressTime = Instant.now();
     private static final int TIMEOUT = 1;
+    private Timer timer = new Timer();
 
     public static void init() {
 
@@ -42,6 +45,8 @@ public class Mouse implements NativeMouseListener {
 
         int button = e.getButton();
 
+        System.out.println("Button pressed " + button);
+
         if(button > 5) return; // If the button key code is greater than five
 
         Instant currentTime = Instant.now();
@@ -49,20 +54,57 @@ public class Mouse implements NativeMouseListener {
 
         if (button == lastButton && duration.getSeconds() < TIMEOUT) {
 
-            pressCount = (pressCount + 1) % 9;
+            pressCount = (pressCount + 1) % Config.getButton(button).size();
 
         } else {
 
+            finalizeCharacter();
+
             pressCount = 0;
+
+            lastButton = button;
 
         }
 
-        lastButton = button;
         lastPressTime = currentTime;
 
-        String currentChar = Config.getButton(button).getKey(pressCount);
-        typeCharacter(currentChar);
-        System.out.println("Typed: " + currentChar);
+        resetTimer(button);
+
+    }
+
+    private void resetTimer(int button) {
+
+        timer.cancel();
+        timer = new Timer();
+
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                finalizeCharacter();
+            }
+        }, TIMEOUT * 1000);
+
+    }
+
+    private void finalizeCharacter() {
+
+        try {
+
+            if (lastButton != -1) {
+
+                String currentChar = Config.getButton(lastButton).getKey(pressCount);
+
+
+                typeCharacter(currentChar);
+                System.out.println("Typed: " + currentChar);
+
+
+                lastButton = -1;
+                pressCount = 0;
+
+            }
+
+        } catch (Exception ignored) {}
 
     }
 
