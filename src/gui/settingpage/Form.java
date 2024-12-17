@@ -2,6 +2,7 @@ package gui.settingpage;
 
 import core.gui.components.Text;
 import core.gui.shapes.Rectangle;
+import core.util.Window;
 
 import java.awt.*;
 
@@ -31,4 +32,20 @@ public class Form extends Rectangle {
         add(textValue, formText);
 
     }
+
+    @Override
+    public void onHoverEnter() {
+
+        Window.getFrame().setCursor(new Cursor(Cursor.HAND_CURSOR));
+        System.out.println(getY() - Window.getMouse().getScrollOffset());
+
+    }
+
+    @Override
+    public void onHoverLeave() {
+
+        Window.getFrame().setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+
+    }
+
 }

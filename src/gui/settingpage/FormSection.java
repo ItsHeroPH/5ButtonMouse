@@ -26,5 +26,6 @@ public class FormSection extends Rectangle {
         Form form9 = new Form(this.getX() + 280, this.getY() + 120, "9th Click:", config.getKey(9));
 
         add(form1, form2, form3, form4, form5, form6, form7, form8, form9);
+
     }
 }

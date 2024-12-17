@@ -1,5 +1,7 @@
 package core.gui;
 
+import core.gui.components.ScrollablePanel;
+import core.page.PageManager;
 import core.util.Window;
 
 import java.awt.*;
@@ -16,12 +18,23 @@ public abstract class Component {
     // Child component list
     private final List<Component> componentList = new ArrayList<>();
     private Component parent;
+    private Component root;
 
     /**
      * Add the child component
      * @param component the child component
      */
     public void add(Component component) {
+
+        if(getParent() != null) {
+
+            component.setRoot(getParent().getRoot());
+
+        } else {
+
+            component.setRoot(this);
+
+        }
 
         component.setParent(this);
         this.componentList.add(component);
@@ -59,6 +72,26 @@ public abstract class Component {
     public Component getParent() {
 
         return parent;
+
+    }
+
+    /**
+     * Get the root component of this component
+     * @return the root component
+     */
+    public Component getRoot() {
+
+        return root;
+
+    }
+
+    /**
+     * Set the root component for this component
+     * @param root the root component
+     */
+    public void setRoot(Component root) {
+
+        this.root = root;
 
     }
 
@@ -167,8 +200,8 @@ public abstract class Component {
         if(
                 Window.getMouse().getX() >= getX() &&
                 Window.getMouse().getX() <= getX() + width &&
-                Window.getMouse().getY() >= getY() &&
-                Window.getMouse().getY() <= getY() + height
+                Window.getMouse().getY() >= getY() - (getRoot() instanceof ScrollablePanel ? Window.getMouse().getScrollOffset() : 0) &&
+                Window.getMouse().getY() <= getY() + height - (getRoot() instanceof ScrollablePanel ? Window.getMouse().getScrollOffset() : 0)
         ) {
 
             if(!isHovered()) this.onHoverEnter(); // fixed the multiple callback on the onHoverEnter method
