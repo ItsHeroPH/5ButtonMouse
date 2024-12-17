@@ -15,8 +15,7 @@ public class StopButton extends Button {
         setSize(170, 40);
         setRound(20);
         setColor(Config.isActive() ? Color.decode("#dddddd") : Color.decode("#848484"));
-        setPadding(70, 7);
-        setPadding(70, 7);
+        setPadding(70, 3);
 
         Text text = new Text("Stop");
         text.setPosition(430, 100);

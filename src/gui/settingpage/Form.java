@@ -19,10 +19,10 @@ public class Form extends Rectangle {
         textValue.setFontSize(16);
         textValue.setFontFamily("Arial");
         textValue.setFontStyle(Font.BOLD);
-        textValue.setPosition(x + 105, y + 10);
+        textValue.setPosition(x + 108, y + 13);
 
         Text formText = new Text(title);
-        formText.setPosition(x + 20, y + 20);
+        formText.setPosition(x + 20, y + 17);
         formText.setColor(Color.decode("#848484"));
         formText.setFontSize(18);
         formText.setFontFamily("Arial");

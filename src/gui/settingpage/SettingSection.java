@@ -24,7 +24,7 @@ public class SettingSection extends Rectangle {
         settingRectangleText.setSize(88, 20);
 
         Text settingText = new Text("SETTINGS");
-        settingText.setPosition(245, 42);
+        settingText.setPosition(245, 47);
         settingText.setColor(Color.decode("#848484"));
         settingText.setFontSize(15);
         settingText.setFontStyle(Font.BOLD);

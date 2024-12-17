@@ -21,7 +21,7 @@ public class Button2Section extends Rectangle {
         rectangleText.setSize(88, 20);
 
         Text text = new Text("BUTTON 2");
-        text.setPosition(260, 312);
+        text.setPosition(260, 317);
         text.setColor(Color.decode("#848484"));
         text.setFontSize(15);
         text.setFontStyle(Font.BOLD);

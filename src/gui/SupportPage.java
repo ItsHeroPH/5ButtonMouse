@@ -15,7 +15,7 @@ public class SupportPage extends Rectangle {
 
         Text header = new Text("Unavailable :(");
         header.setColor(Color.decode("#8b0000"));
-        header.setPosition(230, 150);
+        header.setPosition(230, 80);
         header.setFontSize(50);
         header.setFontFamily("Arial");
         header.setFontStyle(Font.BOLD);

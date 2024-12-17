@@ -14,7 +14,7 @@ public class AboutPage extends Rectangle {
         setColor(Color.decode("#cccccc"));
 
         Text header = new Text("About");
-        header.setPosition(230, 120);
+        header.setPosition(230, 100);
         header.setColor(Color.decode("#4b4949"));
         header.setFontStyle(Font.BOLD);
         header.setFontFamily("Arial");
@@ -29,7 +29,7 @@ public class AboutPage extends Rectangle {
                         """
         );
         paragraph.setColor(Color.decode("#000000"));
-        paragraph.setPosition(230, 120);
+        paragraph.setPosition(230, 140);
         paragraph.setFontFamily("Arial");
         paragraph.setFontSize(14);
         paragraph.setFontStyle(Font.TRUETYPE_FONT);

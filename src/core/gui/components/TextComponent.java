@@ -119,21 +119,24 @@ public abstract class TextComponent extends Component {
         Font font = new Font(getFontFamily(), getFontStyle(), getFontSize());
         FontMetrics fm = graphics2D.getFontMetrics(font);
 
-        super.setSize(fm.stringWidth(text), fm.getHeight());
-
         graphics2D.setColor(getColor());
         graphics2D.setFont(font);
 
         String[] texts = text.split("\n");
 
-        int yPos = getY() - (getFontSize()/2); // fixed the text hit box is being not in the position
+        int yPos = getY() - 30; // fixed the text hit box is being not in the position
+        int size = 0;
         for(int i = 0; i <= texts.length; i++) {
 
-            graphics2D.drawString(texts[i], getX() - 10, yPos);
+            size += fm.getHeight();
+            graphics2D.drawString(texts[i], getX() - 10, yPos + size);
 
-            yPos += fm.getHeight();
+            super.setSize(fm.stringWidth(text), size);
 
         }
+
+        graphics2D.setColor(Color.BLACK);
+        graphics2D.fillRect(getX() - 10, getY() - 30, getWidth(), getHeight());
 
     }
 }
