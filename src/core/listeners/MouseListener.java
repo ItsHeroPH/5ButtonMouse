@@ -10,7 +10,7 @@ public class MouseListener extends MouseAdapter {
     private final boolean[] keyPressed = new boolean[9];
     private int xPos, yPos, scroll = 0;
     private int scrollOffset = 0;
-    private final int scrollStep = 20;
+    private final int scrollStep = 40;
     private final int scrollOffsetMin = 0;
     private int scrollOffsetMax = 0;
 
