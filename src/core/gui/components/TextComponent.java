@@ -104,17 +104,26 @@ public abstract class TextComponent extends Component {
     @Override
     public void onRepaint(Graphics2D graphics2D) {
 
+        graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+
         Font font = new Font(getFontFamily(), getFontStyle(), getFontSize());
         FontMetrics fm = graphics2D.getFontMetrics(font);
 
         super.setSize(fm.stringWidth(text), fm.getHeight());
 
-        graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-
         graphics2D.setColor(getColor());
         graphics2D.setFont(font);
 
-        graphics2D.drawString(text, getX() - 10, getY() - (getFontSize()/2)); // fixed the text hit box is being not in the position
+        String[] texts = text.split("\n");
+
+        int yPos = getY() - (getFontSize()/2); // fixed the text hit box is being not in the position
+        for(int i = 0; i <= texts.length; i++) {
+
+            graphics2D.drawString(texts[i], getX() - 10, yPos);
+
+            yPos += fm.getHeight();
+
+        }
 
     }
 }

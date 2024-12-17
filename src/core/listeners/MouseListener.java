@@ -9,6 +9,11 @@ public class MouseListener extends MouseAdapter {
     // Mouse Listener's Variables
     private final boolean[] keyPressed = new boolean[9];
     private int xPos, yPos, scroll = 0;
+    private int scrollOffset = 0;
+    private final int scrollStep = 20;
+    private final int scrollOffsetMin = 0;
+    private int scrollOffsetMax = 0;
+
 
     /**
      * This is called when the button in the mouse is pressed
@@ -50,8 +55,11 @@ public class MouseListener extends MouseAdapter {
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
 
-        this.scroll = e.getUnitsToScroll();
+        this.scroll = e.getWheelRotation();
         System.out.println("Mouse scroll to " + scroll);
+        this.scrollOffset += scroll * scrollStep;
+
+        this.scrollOffset = Math.max(getScrollOffsetMin(), Math.min(scrollOffset, getScrollOffsetMax()));
 
     }
 
@@ -93,6 +101,43 @@ public class MouseListener extends MouseAdapter {
     public int getScroll() {
 
         return this.scroll;
+
+    }
+
+    /**
+     * Get the scroll offset
+     * @return the amount of scroll offset
+     */
+    public int getScrollOffset() {
+
+        return this.scrollOffset;
+
+    }
+
+    /**
+     * To reset the amount of scroll offset to 0
+     */
+    public void resetScrollOffset() {
+
+        this.scrollOffset = 0;
+
+    }
+
+    public int getScrollOffsetMin() {
+
+        return scrollOffsetMin;
+
+    }
+
+    public int getScrollOffsetMax() {
+
+        return scrollOffsetMax;
+
+    }
+
+    public void setScrollOffsetMax(int scrollOffsetMax) {
+
+        this.scrollOffsetMax = scrollOffsetMax;
 
     }
 }

@@ -66,7 +66,7 @@ public class Panel extends JPanel implements Runnable {
 
             if(timer >= 1000000000) {
 
-//                System.out.println("Current FPS: " + drawCount);
+                System.out.println("Current FPS: " + drawCount);
                 drawCount = 0;
                 timer = 0;
 
