@@ -88,23 +88,19 @@ public class Mouse implements NativeMouseListener {
 
     private void finalizeCharacter() {
 
-        try {
+        if (lastButton != -1) {
 
-            if (lastButton != -1) {
-
-                String currentChar = Config.getButton(lastButton).getKey(pressCount);
+            String currentChar = Config.getButton(lastButton).getKey(pressCount + 1);
 
 
-                typeCharacter(currentChar);
-                System.out.println("Typed: " + currentChar);
+            typeCharacter(currentChar);
+            System.out.println("Typed: " + currentChar);
 
 
-                lastButton = -1;
-                pressCount = 0;
+            lastButton = -1;
+            pressCount = 0;
 
-            }
-
-        } catch (Exception ignored) {}
+        }
 
     }
 
