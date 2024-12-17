@@ -26,9 +26,10 @@ public class ScrollablePanel extends Rectangle {
 
         for (Component child : getChildren()) {
 
-            graphics2D.translate(0, -Window.getMouse().getScrollOffset()); // Apply scroll offset
+            graphics2D.translate(0, -Window.getMouse().getScrollOffset());
             child.onRepaint(graphics2D);
-            graphics2D.translate(0, Window.getMouse().getScrollOffset()); // Reset translation
+            graphics2D.translate(0, Window.getMouse().getScrollOffset());
+
         }
 
     }
