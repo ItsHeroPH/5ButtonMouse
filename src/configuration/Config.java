@@ -3,7 +3,10 @@ package configuration;
 public class Config {
 
     private static Config config;
+
     private final ConfigButton[] buttons = new ConfigButton[5];
+    private boolean active;
+    private boolean autoStart;
 
     public static void loadConfig() {
 
@@ -17,8 +20,34 @@ public class Config {
 
     }
 
+    public static boolean isActive() {
+
+        return config.active;
+
+    }
+
+    public static void setActive(boolean active) {
+
+        config.active = active;
+
+    }
+
+    public static boolean isAutoStart() {
+
+        return config.autoStart;
+
+    }
+
+    public static void setAutoStart(boolean autoStart) {
+
+        config.autoStart = autoStart;
+
+    }
+
     public Config() {
 
+        this.active = false;
+        this.autoStart = true;
         this.buttons[0] = new ConfigButton("A", "B", "C", "D", "E", "1", "2", "", "");
         this.buttons[1] = new ConfigButton("F", "G", "H", "I", "J", "3", "4", "", "");
         this.buttons[2] = new ConfigButton("K", "L", "M", "N", "O", "5", "6", "", "");

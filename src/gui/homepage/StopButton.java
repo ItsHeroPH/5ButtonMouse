@@ -1,9 +1,9 @@
 package gui.homepage;
 
+import configuration.Config;
 import core.gui.components.Button;
 import core.gui.components.Text;
 import gui.HomePage;
-import mouse.Mouse;
 
 import java.awt.*;
 
@@ -14,13 +14,13 @@ public class StopButton extends Button {
         setPosition(430, 100);
         setSize(170, 40);
         setRound(20);
-        setColor(Mouse.isActive() ? Color.decode("#dddddd") : Color.decode("#848484"));
+        setColor(Config.isActive() ? Color.decode("#dddddd") : Color.decode("#848484"));
         setPadding(70, 7);
         setPadding(70, 7);
 
         Text text = new Text("Stop");
         text.setPosition(430, 100);
-        text.setColor(Mouse.isActive() ? Color.decode("#000000") : Color.decode("#4b4949"));
+        text.setColor(Config.isActive() ? Color.decode("#000000") : Color.decode("#4b4949"));
         text.setFontSize(20);
         text.setFontFamily("Arial");
         text.setFontStyle(Font.TRUETYPE_FONT);
@@ -39,7 +39,7 @@ public class StopButton extends Button {
         startButton.setColor(Color.decode("#dddddd"));
         startButton.getText().setColor(Color.decode("#000000"));
 
-        Mouse.setActive(false);
+        Config.setActive(false);
 
     }
 
@@ -47,7 +47,7 @@ public class StopButton extends Button {
     public void onHoverEnter() {
 
         super.onHoverEnter();
-        if(Mouse.isActive()) {
+        if(Config.isActive()) {
 
             setColor(Color.decode("#b3b3b3"));
             getText().setColor(Color.decode("#848484"));
@@ -65,7 +65,7 @@ public class StopButton extends Button {
     public void onHoverLeave() {
 
         super.onHoverLeave();
-        if(Mouse.isActive()) {
+        if(Config.isActive()) {
 
             setColor(Color.decode("#dddddd"));
             getText().setColor(Color.decode("#000000"));
